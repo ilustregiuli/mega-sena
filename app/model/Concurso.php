@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Model;
-
-use App\Model\Sorteio;
+require_once __DIR__ . 'app/model/Sorteio.php';
 
 class Concurso
 {
     public function realizaConcurso(): array
-    {
-        require __DIR__ . '/view/index.php';
+    { 
         $sorteio = new Sorteio();
         $sorteio->handle();
         return $sorteio->getnumerosSorteados();
